@@ -6,17 +6,17 @@ public class Headbob : MonoBehaviour
 {
     [Header("Configuration")]
     [SerializeField] private bool _enable = true;
-    [SerializeField, Range(0, 0.1f)] private float _Amplitude = 0.015f; [SerializeField, Range(0, 30)] private float _frequency = 10.0f;
-    [SerializeField] private Transform _camera = null; [SerializeField] private Transform _cameraHolder = null;
+    [SerializeField, Range(0, 0.1f)] private float _Amplitude = 0.015f; 
+    [SerializeField, Range(0, 30)] private float _frequency = 10.0f;
+    [SerializeField] private Transform _cameraHolder = null;
 
     private float _toggleSpeed = 3.0f;
     private Vector3 _startPos;
-    private CharacterController _controller;
+    [SerializeField] private CharacterController _controller;
 
     private void Awake()
     {
-        _controller = GetComponent<CharacterController>();
-        _startPos = _camera.localPosition;
+        _startPos = _cameraHolder.localPosition;
     }
 
     void Update()
@@ -24,7 +24,7 @@ public class Headbob : MonoBehaviour
         if (!_enable) return;
         CheckMotion();
         ResetPosition();
-        _camera.LookAt(FocusTarget());
+        _cameraHolder.LookAt(FocusTarget());
     }
     private Vector3 FootStepMotion()
     {
@@ -43,7 +43,7 @@ public class Headbob : MonoBehaviour
     }
     private void PlayMotion(Vector3 motion)
     {
-        _camera.localPosition += motion;
+        _cameraHolder.localPosition += motion;
     }
 
     private Vector3 FocusTarget()
@@ -54,7 +54,7 @@ public class Headbob : MonoBehaviour
     }
     private void ResetPosition()
     {
-        if (_camera.localPosition == _startPos) return;
-        _camera.localPosition = Vector3.Lerp(_camera.localPosition, _startPos, 1 * Time.deltaTime);
+        if (_cameraHolder.localPosition == _startPos) return;
+        _cameraHolder.localPosition = Vector3.Lerp(_cameraHolder.localPosition, _startPos, 3 * Time.deltaTime);
     }
 }
