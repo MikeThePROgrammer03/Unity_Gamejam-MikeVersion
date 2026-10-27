@@ -40,7 +40,6 @@ public class PlayerController : MonoBehaviour
 
         currentMoveSpeed = WalkSpeed;
 
-        jumpInput.started += Jumped;
     }
 
     private void Update()
@@ -48,8 +47,9 @@ public class PlayerController : MonoBehaviour
         Vector2 moveVector = moveInput.ReadValue<Vector2>();
         Vector2 mouseDelta = Mouse.current.delta.ReadValue();
 
-        if (!characterController.isGrounded)
+        if (!characterController.isGrounded){
             jumped = false;
+        }
 
         currentMoveSpeed = runInput.IsPressed() ? RunningSpeed : WalkSpeed;
 
@@ -62,17 +62,14 @@ public class PlayerController : MonoBehaviour
         Vector3 forward = transform.TransformDirection(Vector3.forward);
         Vector3 right = transform.TransformDirection(Vector3.right);
 
-        float oldY = moveDirection.y;
 
         Vector2 newSpeed = new Vector2(moveVector.y * currentMoveSpeed, moveVector.x * currentMoveSpeed);
 
         moveDirection = (forward * newSpeed.x) + (right * newSpeed.y);
-        moveDirection.y = (jumped && characterController.isGrounded) ? JumpForce : oldY;
 
-        if (!characterController.isGrounded)
+        if (!characterController.isGrounded){
             moveDirection.y -= Gravity * Time.deltaTime;
-
-
+        }
         characterController.Move(moveDirection * Time.deltaTime);
     }
 
@@ -85,9 +82,6 @@ public class PlayerController : MonoBehaviour
         transform.rotation *= Quaternion.Euler(0, mouseDelta.x * LookSensitivity, 0);
     }
 
-    private void Jumped(InputAction.CallbackContext _)
-    {
-        jumped = true;
-    }
+
 
 }
