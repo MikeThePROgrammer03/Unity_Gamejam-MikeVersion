@@ -788,11 +788,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1789685330755794781, guid: 93455330607fccf4da334731c732607e, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1789685330755794781, guid: 93455330607fccf4da334731c732607e, type: 3}
       propertyPath: _Amplitude
-      value: 0.0006545794
+      value: 0.004
       objectReference: {fileID: 0}
     - target: {fileID: 4758491039874042038, guid: 93455330607fccf4da334731c732607e, type: 3}
       propertyPath: m_Enabled
