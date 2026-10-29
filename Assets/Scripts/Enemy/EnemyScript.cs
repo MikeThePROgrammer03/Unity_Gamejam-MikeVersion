@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class EnemyScript : MonoBehaviour
 {
@@ -7,47 +8,92 @@ public class EnemyScript : MonoBehaviour
     public float velocidad;
     public bool Perseguir;
     public float Rango;
+    public float RangoKill;
     float Distancia;
-
     public Transform Objetivo;
+    [SerializeField] private PlayerController playerController;
 
-    //[Header("Animaciones")]
-    //public Animation Anim;
-    //public string NombreAnimacionCaminar;
-    //public string NombreAnimacionIdle;
+    [Header("Patrullaje")]
+    public float velocidadPatrulla = 2f;
+    public float radioPatrulla = 10f;
+    public float tiempoEspera = 2f;
+    private Vector3 puntoInicial;
+    private float temporizador;
+    private bool patrullando;
+
+    private void Start()
+    {
+        puntoInicial = enemy.transform.position;
+    }
 
     private void Update()
     {
-        //Debug.Log("Entro al Update");
         Distancia = Vector3.Distance(enemy.transform.position, Objetivo.position);
 
         if (Distancia < Rango)
         {
-            //Debug.Log("El enemigo debería de estar persiguiendo");
-            Perseguir = true;
+            Perseguir = playerController.GetVelocity() > 0.1f;
         }
-        else if (Distancia > Rango + 3)
+        else if (Distancia > Rango + 1 || playerController.GetVelocity() < 0.1f)
         {
             Perseguir = false;
         }
 
-        if (Perseguir == false)
+        if (Perseguir)
         {
-            enemy.speed = 0;
-            //Anim.CrossFade(NombreAnimacionIdle);
-        }
-        else if (Perseguir == true)
-        {
+            patrullando = false;
             enemy.speed = velocidad;
-            //Anim.CrossFade(NombreAnimacionCaminar);
             enemy.SetDestination(Objetivo.position);
+            if(Distancia < RangoKill)
+            {
+                SceneManager.LoadScene(1);
+            }
+        }
+        else
+        {
+            Patrullar();
         }
     }
-    
+
+    private void Patrullar()
+    {
+        enemy.speed = velocidadPatrulla;
+
+        // Primera vez que entra a patrullar: elige un destino de inmediato
+        if (!patrullando)
+        {
+            patrullando = true;
+            NuevoDestino();
+            return;
+        }
+
+        // Si llegó al destino, espera y elige otro
+        if (!enemy.pathPending && enemy.remainingDistance <= enemy.stoppingDistance)
+        {
+            temporizador += Time.deltaTime;
+            if (temporizador >= tiempoEspera)
+            {
+                NuevoDestino();
+            }
+        }
+    }
+
+    private void NuevoDestino()
+    {
+        temporizador = 0;
+        Vector3 puntoRandom = puntoInicial + Random.insideUnitSphere * radioPatrulla;
+
+        if (NavMesh.SamplePosition(puntoRandom, out NavMeshHit hit, radioPatrulla, NavMesh.AllAreas))
+        {
+            enemy.SetDestination(hit.position);
+        }
+    }
+
     private void OnDrawGizmos()
     {
-        //Debug.Log("Entro al Gizmos");
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(enemy.transform.position, Rango);
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(enemy.transform.position, radioPatrulla);
     }
 }

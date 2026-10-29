@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float WalkSpeed = 5.5f;
-    [SerializeField] private float RunningSpeed = 9.0f;
+    [SerializeField] private float RunningSpeed = 5.5f;
 
     [SerializeField] private float JumpForce = 8.0f;
     [SerializeField] private float Gravity = 20.0f;
@@ -82,6 +82,11 @@ public class PlayerController : MonoBehaviour
         transform.rotation *= Quaternion.Euler(0, mouseDelta.x * LookSensitivity, 0);
     }
 
+    public float GetVelocity()
+    {
+        float velocity = new Vector3(moveDirection.x, 0, moveDirection.z).magnitude;
+        return velocity;
+    }
 
 
 }
