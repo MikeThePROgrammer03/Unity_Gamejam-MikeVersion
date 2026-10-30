@@ -20,10 +20,10 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_AmbientSkyColor: {r: 0.015996292, g: 0.02415763, b: 0.051269468, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 1
+  m_AmbientIntensity: 0.59
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
@@ -986,7 +986,7 @@ Light:
   serializedVersion: 13
   m_Type: 1
   m_Color: {r: 0.040900253, g: 0.13035274, b: 0.27672952, a: 1}
-  m_Intensity: 10.4
+  m_Intensity: 4.75
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -4593,9 +4593,25 @@ PrefabInstance:
       value: Puerta Amarilla
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 251d837be132184409fabebb5f425e41, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 251d837be132184409fabebb5f425e41, type: 3}
+      propertyPath: m_RayTracingMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 251d837be132184409fabebb5f425e41, type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 251d837be132184409fabebb5f425e41, type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 251d837be132184409fabebb5f425e41, type: 3}
       propertyPath: 'm_Materials.Array.data[24]'
       value: 
-      objectReference: {fileID: -5606990743683551665, guid: 251d837be132184409fabebb5f425e41, type: 3}
+      objectReference: {fileID: 2100000, guid: 83bf8de9105c6724286416087d3a75d0, type: 2}
     - target: {fileID: -4985274156758551297, guid: 251d837be132184409fabebb5f425e41, type: 3}
       propertyPath: m_LocalPosition.x
       value: -117.4
