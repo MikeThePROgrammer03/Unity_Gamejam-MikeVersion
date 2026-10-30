@@ -3,7 +3,52 @@ guid: 0d668fcd565a0ae4eb7423e175ae733a
 ModelImporter:
   serializedVersion: 24600
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MAT_Mictecah_Zapato_Negro
+    second: {fileID: 2100000, guid: 36e31b6ef25bccf44acc8f44595180d2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MC_PRIEST_V3_Estola_granate
+    second: {fileID: 2100000, guid: 4832bf23196e7be45bd048cc6b4eba20, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MC_PRIEST_V3_Metal_oscuro
+    second: {fileID: 2100000, guid: dc84f92c16def5d4ebda5bb6ae0674d5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MC_PRIEST_V3_Ornamento_apagado
+    second: {fileID: 2100000, guid: fe22439c57c71c94696cc250359a338c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MC_PRIEST_V3_Sotana_negra
+    second: {fileID: 2100000, guid: c0bc06f5f7decc540a5b3b47b892a24e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MC_PRIEST_V3_Sotana_pliegues
+    second: {fileID: 2100000, guid: 87c4ec7f4d254e74d86cbac1c9b68495, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI_Eyes
+    second: {fileID: 2100000, guid: a899ad03f6e375e4ba6f82d7127febb1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI_Superhero_Male
+    second: {fileID: 2100000, guid: e2ff9b2e5701ad943b2877e53c07e691, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI_Superhero_Male.001
+    second: {fileID: 2100000, guid: 680170341bb4c2f42a60dcf2d625e0e7, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
