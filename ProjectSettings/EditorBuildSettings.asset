@@ -6,14 +6,23 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Principal.unity
+    guid: f78c4fc719177b74faa97f74790170ae
+  - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
     path: Assets/Scenes/KillScene.unity
     guid: 32bbabe0139d29546a20f4832c66fd6a
   - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: 2c58eed7e5b19574983b4144d99ea34a
+  - enabled: 1
     path: Assets/Scenes/Win.unity
     guid: c72afc645622ee845b090f94d1cb7fad
+  - enabled: 1
+    path: Assets/Scenes/TimeOut.unity
+    guid: 244b639e96c02384ba0d5e54df5a9f4c
   m_configObjects:
     com.unity.dt.app-ui: {fileID: 11400000, guid: 1b1c20d82303e4b5781c3ef50ac1449f, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}

@@ -8,6 +8,7 @@ public class PassingOtherWorld : MonoBehaviour
     private bool canPass = false;
     [SerializeField] private Collider otherWorldCollider;
     [SerializeField] private PlayerInventary playerInventary;
+    [SerializeField] private TimePasing timePasing; 
 
 
     void OnTriggerEnter(Collider other)
@@ -35,6 +36,10 @@ public class PassingOtherWorld : MonoBehaviour
                 otherWorldCollider.isTrigger = false;
             }
         }
+        if (other.CompareTag("ResetTime"))
+        {
+            timePasing.ResetTimer();
+        }
         
     }
     void OnTriggerExit(Collider other)
@@ -45,6 +50,10 @@ public class PassingOtherWorld : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
             InventaryUI.SetActive(true);
             InventaryUI2.SetActive(false);
+        }
+        if (other.CompareTag("ResetTime"))
+        {
+            timePasing.StartTimer();
         }
     }
 

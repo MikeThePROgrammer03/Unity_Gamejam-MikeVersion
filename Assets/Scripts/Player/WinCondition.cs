@@ -7,7 +7,7 @@ public class WinCondition : MonoBehaviour
     {
         if (other.CompareTag("Win"))
         {
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(4);
         }
     }
 }

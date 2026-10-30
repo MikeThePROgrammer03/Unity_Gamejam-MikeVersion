@@ -68,6 +68,8 @@ public class InteractAbility : MonoBehaviour
         item.transform.SetParent(null);
         item.SetActive(true);  
         Rigidbody rb = item.GetComponent<Rigidbody>();
+        KeysApper keysApper = item.GetComponent<KeysApper>();
+        keysApper.ResetPosition(); 
         rb.isKinematic = false;
         item.tag = "Interactable";
         playerInventary.RemoveItemFromInventary(item);

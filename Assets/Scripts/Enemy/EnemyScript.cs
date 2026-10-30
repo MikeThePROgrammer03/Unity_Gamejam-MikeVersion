@@ -46,7 +46,7 @@ public class EnemyScript : MonoBehaviour
             enemy.SetDestination(Objetivo.position);
             if(Distancia < RangoKill)
             {
-                SceneManager.LoadScene(1);
+                SceneManager.LoadScene(2);
             }
         }
         else

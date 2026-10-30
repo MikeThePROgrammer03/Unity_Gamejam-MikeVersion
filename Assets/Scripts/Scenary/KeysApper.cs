@@ -10,7 +10,7 @@ public class KeysApper : MonoBehaviour
     }
 
     // Update is called once per frame
-    void ResetPosition()
+    public void ResetPosition()
     {
         gameObject.transform.position = keyZone.transform.position;
     }
