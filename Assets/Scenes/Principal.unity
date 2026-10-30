@@ -136,7 +136,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1323011
 RectTransform:
   m_ObjectHideFlags: 0
@@ -412,7 +412,6 @@ GameObject:
   - component: {fileID: 189519036}
   - component: {fileID: 189519035}
   - component: {fileID: 189519034}
-  - component: {fileID: 189519033}
   m_Layer: 5
   m_Name: ButtonExit
   m_TagString: Untagged
@@ -440,22 +439,6 @@ RectTransform:
   m_AnchoredPosition: {x: 396, y: 37}
   m_SizeDelta: {x: 375.8, y: 112.1}
   m_Pivot: {x: 0.5, y: 0}
---- !u!114 &189519033
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 189519031}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 967cf8793ba6f9d4baacc32bfdcb04f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayButton
-  video: {fileID: 210744567}
-  pantallaVideo: {fileID: 83639960}
-  Pantalla: {fileID: 427169152}
-  Script: {fileID: 505647417}
 --- !u!114 &189519034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -500,9 +483,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 189519033}
-        m_TargetAssemblyTypeName: PlayButton, Assembly-CSharp
-        m_MethodName: Reproducir
+      - m_Target: {fileID: 219504237}
+        m_TargetAssemblyTypeName: TutorialButton, Assembly-CSharp
+        m_MethodName: SalirJuego
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
