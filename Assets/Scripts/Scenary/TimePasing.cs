@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class TimePasing : MonoBehaviour
 {
     [Header("Configuración")]
-    [SerializeField] private float duration = 120f; // 2 minutos
+    [SerializeField] private float duration = 240f; // 4 minutos
 
     [Header("UI (solo visual)")]
     [SerializeField] private TMP_Text timerText;
